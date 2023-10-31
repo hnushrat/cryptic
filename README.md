@@ -4,14 +4,25 @@
 
 Several models have been trained for the task:
 - **Auto Encoder**: This model aims at learning the representations of the binaries and then using them to classify.
-- **LSTM**: This model uses lstm architecture which takes each binary bit for processing, and classifies.
-- **Dense**: This is the vanilla Neural network(ANN) for classification.
-- **BERT**: This model tries to tackle the problem statement in a unique way by transforming bitstreams to language.
+- **LSTM**: This model uses the LSTM architecture, which takes each binary bit for processing and classifies.
+- **Dense**: This is the vanilla neural network (ANN) for classification.
+- **BERT**: This model tries to tackle the problem statement in a unique way by transforming bitstreams into language.
 
 
 **How to use?**: 
 
-`FinBERT` is a BERT model pre-trained on financial communication text. The purpose is to enhance finaincal NLP research and practice. It is trained on the following three finanical communication corpus. The total corpora size is 4.9B tokens.
+**For the Auto Encoder model:**
+- If you want to retrain it, run "auto_enc.py". This will save the best-trained encoder model as "best_encoder.h5".
+- Next, run "encoded_inputs_lstm.py" to train the classification model on the encoded inputs. The saved model will be named as "encoded_inputs_model.h5"
+
+**For the LSTM model:**
+- Run "lstm_tf.py" to train the classification model. The saved model will be named "best_classifier_2.h5"
+
+**For the Dense model:**
+- Run "dense_tf.py" to train the classification model. The saved model will be named "best_classifier_dense.h5"
+
+**For the BERT model:**
+- Run "train_v2.py" to train the classification model.
 
 * Corporate Reports 10-K & 10-Q: 2.5B tokens 
 * Earnings Call Transcripts: 1.3B tokens
