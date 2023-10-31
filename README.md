@@ -37,4 +37,4 @@ Several models have been trained for the task:
 - tensorflow(2.14.0)
 
 ## Contact
-Please post a Github issue or contact (hnushrat@gmail.com) if you have any questions.
+Please post a Github issue or contact (hnushrat_t@isical.ac.in) if you have any questions.
