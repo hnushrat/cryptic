@@ -6,7 +6,7 @@ Several models have been trained for the task:
 - **Auto Encoder**: This model aims at learning the representations of the binaries and then using them to classify.
 - **LSTM**: This model uses the LSTM architecture, which takes each binary bit for processing and classifies.
 - **Dense**: This is the vanilla neural network (ANN) for classification.
-- **BERT**: This model tries to tackle the problem statement in a unique way by transforming bitstreams into language.
+- **BERT**: This model tries to tackle the problem statement in a unique way by transforming bitstreams into tokens.
 
 
 **How to use**: 
