@@ -23,3 +23,17 @@ def return_data(filename):
     data.drop(["CID", "Bitstream"], axis = 1, inplace = True)
 
     return data.astype('int')
+
+
+def return_data_v2(filename):
+    data = pd.read_csv(filename)
+    
+    space_split = []
+    for i in data["Bitstream"].values:
+        space_split.append(" ".join(list(i)))
+
+    data["space_split"] = space_split
+
+    data.drop(["CID", "Bitstream"], axis = 1, inplace = True)
+
+    return data
