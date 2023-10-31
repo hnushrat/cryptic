@@ -12,7 +12,6 @@ Several models have been trained for the task:
 **How to use**: 
 - Note:
   - The data file, "TrainingData.csv" needs to be in the same directory as the python files.
-  - BERT model is in the "train_v2.py" and is written in pytorch.
 
 
 **For the Auto Encoder model:**
