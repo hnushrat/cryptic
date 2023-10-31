@@ -21,14 +21,6 @@ Several models have been trained for the task:
 **For the LSTM model:**
 - Run "lstm_tf.py" to train the classification model. The saved model will be named "best_classifier_2.h5"
 
-                precision    recall  f1-score   support
-           0       0.50      0.61      0.55     24828
-           1       0.50      0.38      0.44     25172
-    accuracy        .         .        0.50     50000
-   macro avg       0.50      0.50      0.49     50000
-weighted avg       0.50      0.50      0.49     50000
-
-
 **For the Dense model:**
 - Run "dense_tf.py" to train the classification model. The saved model will be named "best_classifier_dense.h5"
 
