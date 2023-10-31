@@ -6,7 +6,7 @@ Several models have been trained for the task:
 - **Auto Encoder**: This model aims at learning the representations of the binaries and then using them to classify.
 - **LSTM**: This model uses the LSTM architecture, which takes each binary bit for processing and classifies.
 - **Dense**: This is the vanilla neural network (ANN) for classification.
-- **BERT**: This model tries to tackle the problem statement in a unique way by transforming bitstreams into tokens.
+
 
 
 **How to use**: 
@@ -25,15 +25,10 @@ Several models have been trained for the task:
 **For the Dense model:**
 - Run "dense_tf.py" to train the classification model. The saved model will be named "best_classifier_dense.h5"
 
-**For the BERT model:**
-- Run "train_v2.py" to train the classification model.
-
 **All of the trials could only achieve an accuracy of approximately 50%**
 
 ## Packages
-- python(3.8.18) for pytorch.
-- python(3.10.13) for rest.
-- torch(2.1.0+cu118)
+- python(3.10.13)
 - tensorflow(2.14.0)
 
 ## Contact
