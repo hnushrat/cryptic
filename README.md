@@ -9,11 +9,11 @@ Several models have been trained for the task:
 - **BERT**: This model tries to tackle the problem statement in a unique way by transforming bitstreams into language.
 
 
-**How to use?**: 
+**How to use**: 
 
 **For the Auto Encoder model:**
 - If you want to retrain it, run "auto_enc.py". This will save the best-trained encoder model as "best_encoder.h5".
-- Next, run "encoded_inputs_lstm.py" to train the classification model on the encoded inputs. The saved model will be named as "encoded_inputs_model.h5"
+- Next, run "encoded_inputs_lstm.py" to train the classification model on the encoded inputs. The saved model will be named "encoded_inputs_model.h5"
 
 **For the LSTM model:**
 - Run "lstm_tf.py" to train the classification model. The saved model will be named "best_classifier_2.h5"
@@ -24,69 +24,5 @@ Several models have been trained for the task:
 **For the BERT model:**
 - Run "train_v2.py" to train the classification model.
 
-* Corporate Reports 10-K & 10-Q: 2.5B tokens 
-* Earnings Call Transcripts: 1.3B tokens
-* Analyst Reports: 1.1B tokens
-
-`FinBERT` results in state-of-the-art performance on various financial NLP task, including sentiment analysis, ESG classification, forward-looking statement (FLS) classification. With the release of `FinBERT`, we hope practitioners and researchers can utilize `FinBERT` for a wider range of applications where the prediction target goes beyond sentiment, such as financial-related outcomes including stock returns, stock volatilities, corporate fraud, etc.
-
----
-**\*\*\*\*\* July 30, 2021: migrated to Huggingface 🤗\*\*\*\*\***
-
-The fine-tuned `FinBERT` model for financial sentiment classification has been uploaded and integrated with Huggingface's [`transformers`](https://huggingface.co/transformers/) library. This model is fine-tuned on 10,000 manually annotated (positive, negative, neutral) sentences from analyst reports. This model achieves superior performance on financial tone anlaysis task. If you are simply interested in using `FinBERT` for financial tone analysis, give it a try.
-
-```javascript
-from transformers import BertTokenizer, BertForSequenceClassification
-import numpy as np
-
-finbert = BertForSequenceClassification.from_pretrained('yiyanghkust/finbert-tone',num_labels=3)
-tokenizer = BertTokenizer.from_pretrained('yiyanghkust/finbert-tone')
-
-sentences = ["there is a shortage of capital, and we need extra financing", 
-             "growth is strong and we have plenty of liquidity", 
-             "there are doubts about our finances", 
-             "profits are flat"]
-
-inputs = tokenizer(sentences, return_tensors="pt", padding=True)
-outputs = finbert(**inputs)[0]
-
-labels = {0:'neutral', 1:'positive',2:'negative'}
-for idx, sent in enumerate(sentences):
-    print(sent, '----', labels[np.argmax(outputs.detach().numpy()[idx])])
-    
-'''
-there is a shortage of capital, and we need extra financing ---- negative
-growth is strong and we have plenty of liquidity ---- positive
-there are doubts about our finances ---- negative
-profits are flat ---- neutral
-'''
-    
-```
-
-***
-
-**\*\*\*\*\* Jun 16, 2020: Pretrained FinBERT Model Released\*\*\*\*\***
-
-We provide four versions of pre-trained FinBERT weights. 
-- [FinBERT-FinVocab-Uncased](https://gohkust-my.sharepoint.com/:f:/g/personal/imyiyang_ust_hk/EksJcamJpclJlbMweFfB5DQB1XrsxURYN5GSqZw3jmSeSw?e=KAyhsX) (**Recommended**)
-- [FinBERT-FinVocab-Cased](https://gohkust-my.sharepoint.com/:f:/g/personal/imyiyang_ust_hk/EgJZkmPlrdBLj6Kb4RXxwGwBymku6G-47QQrPYYDPJfr1Q?e=xA978z)
-- [FinBERT-BaseVocab-Uncased](https://gohkust-my.sharepoint.com/:f:/g/personal/imyiyang_ust_hk/ErcYR77ZaxBAnQsmjIJF5joBapAf0HDaH0vWr_WXnoF1sA?e=oBTsSk)
-- [FinBERT-BaseVocab-Cased](https://gohkust-my.sharepoint.com/:f:/g/personal/imyiyang_ust_hk/EtBK8m0MBC1Np5sAN-s5ZHsBW2dGCfBvoZtXyD_Xa9ywGw?e=h3veaz)
-
-`FinVocab` is a new WordPiece vocabulary on our finanical corpora using the SentencePiece library. We produce both cased and uncased versions of `FinVocab`, with sizes of 28,573 and 30,873 tokens respectively. This is very similar to the 28,996 and 30,522 token sizes of the original BERT cased and uncased `BaseVocab`. 
-- [FinVocab-Uncased](https://gohkust-my.sharepoint.com/:t:/g/personal/imyiyang_ust_hk/EX3C-KM9bTxOjdttsPslLZUBw_mh9Jdh8PB0WTv6b2tEIA?e=DYBVJY)
-- [FinVocab-Cased](https://gohkust-my.sharepoint.com/:t:/g/personal/imyiyang_ust_hk/EchaAUzzYKhAidVhkqGp790BuA8UC5E9rTRhTmAnlGzZug?e=eniqml)
-
- 
-
-## Citation
-    @misc{yang2020finbert,
-        title={FinBERT: A Pretrained Language Model for Financial Communications},
-        author={Yi Yang and Mark Christopher Siy UY and Allen Huang},
-        year={2020},
-        eprint={2006.08097},
-        archivePrefix={arXiv},
-        }
-
 ## Contact
-Please post a Github issue or contact [imyiyang@ust.hk](imyiyang@ust.hk) if you have any questions.
+Please post a Github issue or contact (hnushrat@gmail.com) if you have any questions.
