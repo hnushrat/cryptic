@@ -20,8 +20,8 @@ Several models have been trained for the task:
 
 **For the LSTM model:**
 - Run "lstm_tf.py" to train the classification model. The saved model will be named "best_classifier_2.h5"
-                precision    recall  f1-score   support
 
+                precision    recall  f1-score   support
            0       0.50      0.61      0.55     24828
            1       0.50      0.38      0.44     25172
     accuracy                           0.50     50000
