@@ -12,6 +12,7 @@ Several models have been trained for the task:
 **How to use**: 
 - Note:
   - The data file, "TrainingData.csv" needs to be in the same directory as the python files.
+  - Approaches have been made with fixed seed values for reproducibility.
 
 
 **For the Auto Encoder model:**
