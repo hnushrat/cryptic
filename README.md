@@ -17,7 +17,7 @@ Several models have been trained for the task:
 
 **For the Auto Encoder model:**
 - If you want to retrain it, run "auto_enc.py". This will save the best-trained encoder model as "best_encoder.h5".
-- Next, run "encoded_inputs_lstm.py" to train the classification model on the encoded inputs. The saved model will be named "encoded_inputs_model.h5"
+- Next, run "encoded_inputs_lstm.py" to train the classification model on the encoded inputs. The model will be saved as "encoded_inputs_model.h5"
 
 **For the LSTM model:**
 - Run "lstm_tf.py" to train the classification model. The saved model will be named "best_classifier_2.h5"
