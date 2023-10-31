@@ -25,7 +25,7 @@ Several models have been trained for the task:
 **For the Dense model:**
 - Run "dense_tf.py" to train the classification model. The saved model will be named "best_classifier_dense.h5"
 
-**All of the trials could only achieve an accuracy of approximately 50%**
+**The results in "Comparative_results.pdf" are evaluated on the validation set.**
 
 ## Packages
 - python(3.10.13)
