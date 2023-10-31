@@ -13,6 +13,7 @@ import keras
 from keras.models import Sequential
 from keras.layers import LSTM, Dense, Flatten, Dropout, Conv1D, Embedding
 
+from transform_data import return_data
 
 seed = 42
 random.seed(seed)
@@ -20,19 +21,9 @@ np.random.seed(seed)
 tf.random.set_seed(seed)
 
 
-data = pd.read_csv('TrainingData.csv')
+filename = "TrainingData.csv"
+data = return_data('TrainingData.csv')
 
-for i in range(64):
-    data[f"pos_{i+1}"] = np.nan
-
-
-split = []
-for i in data["Bitstream"].values:
-    split.append(list(i))
-
-data.iloc[:, 3:] = split
-
-data.drop(["CID", "Bitstream"], axis = 1, inplace = True)
 
 features = data.drop('class', axis=1)
 features = features.values
