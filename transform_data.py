@@ -22,4 +22,4 @@ def return_data(filename):
 
     data.drop(["CID", "Bitstream"], axis = 1, inplace = True)
 
-    return data
+    return data.astype('int')
