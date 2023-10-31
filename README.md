@@ -28,7 +28,7 @@ Several models have been trained for the task:
 **For the BERT model:**
 - Run "train_v2.py" to train the classification model.
 
-All of the trials could only achieve an accuracy of approximately 50%.
+**All of the trials could only achieve an accuracy of approximately 50%**
 
 ## Packages
 - python(3.8.18) for pytorch.
