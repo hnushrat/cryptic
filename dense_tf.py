@@ -22,7 +22,7 @@ tf.random.set_seed(seed)
 
 
 filename = "TrainingData.csv"
-data = return_data('TrainingData.csv')
+data = return_data(filename)
 
 
 features = data.drop('class', axis=1)
@@ -35,9 +35,7 @@ xtrain, xtest, ytrain, ytest = train_test_split(features, labels, test_size = 0.
 
 
 model = Sequential()
-# model.add(Conv1D(64, kernel_size = 3, input_shape=(64, 1)))
 
-# model.add(Embedding(input_dim = 2, output_dim = 128, input_length = 64))
 model.add(Dense(128, activation = 'relu', input_shape = xtrain.shape[1:]))
 model.add(Dense(64, activation = 'relu'))
 
@@ -52,10 +50,9 @@ model.compile(loss = 'binary_crossentropy',
 
 print(model.summary())
 
-# Train the model on all available devices.
 
 best = keras.callbacks.ModelCheckpoint('best_classifier_dense.h5',monitor='val_accuracy')
 
 
 
-model.fit(xtrain, ytrain, validation_data = (xtest, ytest), batch_size = 64, epochs = 100, callbacks=[best])
+model.fit(xtrain, ytrain, validation_data = (xtest, ytest), batch_size = 64, epochs = 100, callbacks = [best])
