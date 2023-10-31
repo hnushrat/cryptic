@@ -10,7 +10,10 @@ Several models have been trained for the task:
 
 
 **How to use**: 
-
+- Note:
+  -- The data file, "TrainingData.csv" needs to be in the same directory as the python files.
+  -- BERT model is in the "train_v2.py" and is written in pytorch.
+- 
 **For the Auto Encoder model:**
 - If you want to retrain it, run "auto_enc.py". This will save the best-trained encoder model as "best_encoder.h5".
 - Next, run "encoded_inputs_lstm.py" to train the classification model on the encoded inputs. The saved model will be named "encoded_inputs_model.h5"
