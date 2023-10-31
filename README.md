@@ -24,7 +24,6 @@ Several models have been trained for the task:
 
            0       0.50      0.61      0.55     24828
            1       0.50      0.38      0.44     25172
-
     accuracy                           0.50     50000
    macro avg       0.50      0.50      0.49     50000
 weighted avg       0.50      0.50      0.49     50000
