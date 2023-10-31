@@ -21,7 +21,7 @@ np.random.seed(seed)
 tf.random.set_seed(seed)
 
 filename = "TrainingData.csv"
-data = return_data('TrainingData.csv')
+data = return_data(filename)
 
 features = data.drop('class', axis=1)
 features = features.values
