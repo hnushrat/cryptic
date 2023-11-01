@@ -33,10 +33,6 @@ labels = data['class'].values
 
 xtrain, xtest, ytrain, ytest = train_test_split(features, labels, test_size = 0.2, random_state = 42)
 
-
-xtrain = np.expand_dims(xtrain, axis = 1)
-xtest = np.expand_dims(xtest, axis = 1)
-
 model = Sequential()
 
 model.add(LSTM(64, activation='tanh', return_sequences=True, input_shape = (1, 128)))
